@@ -3,12 +3,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class TransparentContainer extends StatelessWidget {
-  const TransparentContainer(
-      {Key? key, required this.text, required this.opacity})
-      : super(key: key);
+  const TransparentContainer({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
 
-  final String text;
-  final double opacity;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +19,11 @@ class TransparentContainer extends StatelessWidget {
           filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.white54.withOpacity(opacity),
+              color: Colors.white54.withOpacity(0.1),
               border: Border.all(width: 1, color: Colors.white30),
             ),
             child: Center(
-              child: Text(
-                text,
-                style: const TextStyle(
-                  fontSize: 80,
-                  color: Colors.white54,
-                ),
-              ),
+              child: child,
             ),
           ),
         ),
