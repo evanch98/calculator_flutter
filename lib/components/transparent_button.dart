@@ -6,7 +6,7 @@ class TransparentButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       child: const TransparentContainer(
         child: Text("1"),
       ),
