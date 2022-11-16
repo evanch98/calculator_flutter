@@ -28,7 +28,6 @@ class TransparentContainer extends StatelessWidget {
             width: size,
             decoration: BoxDecoration(
               color: Colors.white54.withOpacity(0.2),
-              border: Border.all(width: 1, color: Colors.white30),
               borderRadius: topBorder
                   ? BorderRadius.vertical(
                       top: Radius.circular(radiusSize),
