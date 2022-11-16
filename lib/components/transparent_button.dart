@@ -18,7 +18,6 @@ class TransparentButton extends StatelessWidget {
         child: Text(symbol),
         size: 50.0,
         radiusSize: 0.0,
-        topBorder: false,
       ),
       onTap: () {
         onTap();

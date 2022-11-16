@@ -7,7 +7,7 @@ class TransparentContainer extends StatelessWidget {
     Key? key,
     required this.child,
     required this.size,
-    required this.topBorder,
+    this.topBorder = false,
     required this.radiusSize,
   }) : super(key: key);
 
