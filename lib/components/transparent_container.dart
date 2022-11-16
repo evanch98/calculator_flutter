@@ -7,10 +7,14 @@ class TransparentContainer extends StatelessWidget {
     Key? key,
     required this.child,
     required this.size,
+    required this.topBorder,
+    required this.radiusSize,
   }) : super(key: key);
 
   final Widget child;
   final double size;
+  final double radiusSize;
+  final bool topBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +29,13 @@ class TransparentContainer extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white54.withOpacity(0.2),
               border: Border.all(width: 1, color: Colors.white30),
+              borderRadius: topBorder
+                  ? BorderRadius.vertical(
+                      top: Radius.circular(radiusSize),
+                    )
+                  : BorderRadius.vertical(
+                      bottom: Radius.circular(radiusSize),
+                    ),
             ),
             child: child,
           ),

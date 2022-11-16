@@ -16,6 +16,9 @@ class TransparentButton extends StatelessWidget {
     return InkWell(
       child: TransparentContainer(
         child: Text(symbol),
+        size: 50.0,
+        radiusSize: 0.0,
+        topBorder: false,
       ),
       onTap: () {
         onTap();
