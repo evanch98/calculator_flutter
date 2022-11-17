@@ -1,5 +1,7 @@
-import 'package:calculator_flutter/components/transparent_container.dart';
+import 'package:calculator_flutter/constants.dart';
 import 'package:flutter/material.dart';
+
+import 'transparent_container.dart';
 
 class TransparentButton extends StatelessWidget {
   const TransparentButton({
@@ -15,9 +17,14 @@ class TransparentButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: TransparentContainer(
-        child: Text(symbol),
         size: double.infinity,
         radiusSize: 0.0,
+        child: Center(
+          child: Text(
+            symbol,
+            style: kButtonTextStyle,
+          ),
+        ),
       ),
       onTap: () {
         onTap!();
