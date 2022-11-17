@@ -9,18 +9,18 @@ class TransparentButton extends StatelessWidget {
   }) : super(key: key);
 
   final String symbol;
-  final Function onTap;
+  final Function? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: TransparentContainer(
         child: Text(symbol),
-        size: 50.0,
+        size: double.infinity,
         radiusSize: 0.0,
       ),
       onTap: () {
-        onTap();
+        onTap!();
       },
     );
   }
