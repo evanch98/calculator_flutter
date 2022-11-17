@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'main_ui.dart';
+
 void main() {
   runApp(const CalculatorApp());
 }
@@ -9,6 +11,8 @@ class CalculatorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const MaterialApp(
+      home: MainUi(),
+    );
   }
 }
