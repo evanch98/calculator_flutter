@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-const kBackgroundColor = Color(0xFF9879F0);
+//TODO: Add comments
+
+const kNetworkImage =
+    "https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&w=600";
 
 const kGutterSize = 3.0;
 
