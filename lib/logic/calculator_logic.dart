@@ -30,7 +30,7 @@ class CalculatorLogic {
     if (_operator.isEmpty) {
       if (num == "-") {
         if (_num1.isEmpty) {
-          _num1 += "${num}0";
+          _num1 += num;
         } else if (_num1.isNotEmpty && _num1[0] == "-") {
           _num1 = _num1.replaceAll("-", "");
         } else if (_num1.isNotEmpty && _num1[0] != "-") {
