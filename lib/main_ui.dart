@@ -1,3 +1,4 @@
+import 'package:calculator_flutter/logic/calculator_logic.dart';
 import 'package:flutter/material.dart';
 
 import '/constants.dart';
@@ -12,6 +13,22 @@ class MainUi extends StatefulWidget {
 }
 
 class _MainUiState extends State<MainUi> {
+  String string = "";
+
+  void _setNum(String num) {
+    CalculatorLogic.setNum(num);
+    setState(() {
+      string = CalculatorLogic.getString();
+    });
+  }
+
+  void _setOperator(String op) {
+    CalculatorLogic.setOperator(op);
+    setState(() {
+      string = CalculatorLogic.getString();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -21,15 +38,18 @@ class _MainUiState extends State<MainUi> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: <Widget>[
-              const Expanded(
+              Expanded(
                 child: TransparentContainer(
                   size: double.infinity,
                   radiusSize: 20.0,
                   topBorder: true,
-                  child: Center(
-                    child: Text(
-                      "12+5",
-                      style: kScreenTextStyle,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                      child: Text(
+                        string,
+                        style: kScreenTextStyle,
+                      ),
                     ),
                   ),
                 ),
@@ -49,13 +69,30 @@ class _MainUiState extends State<MainUi> {
                           Expanded(
                             child: ButtonRow(
                               firstBtnSymbol: "AC",
-                              firstBtnFunction: () {},
+                              firstBtnFunction: () {
+                                CalculatorLogic.allClear();
+                                setState(() {
+                                  string = CalculatorLogic.getString();
+                                });
+                              },
                               secondBtnSymbol: "x²",
-                              secondBtnFunction: () {},
+                              secondBtnFunction: () {
+                                CalculatorLogic.square();
+                                setState(() {
+                                  string = CalculatorLogic.getResult();
+                                });
+                              },
                               thirdBtnSymbol: "=",
-                              thirdBtnFunction: () {},
+                              thirdBtnFunction: () {
+                                CalculatorLogic.equalOperator();
+                                setState(() {
+                                  string = CalculatorLogic.getResult();
+                                });
+                              },
                               fourthBtnSymbol: "←",
-                              fourthBtnFunction: () {},
+                              fourthBtnFunction: () {
+                                _setNum("c");
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -64,13 +101,21 @@ class _MainUiState extends State<MainUi> {
                           Expanded(
                             child: ButtonRow(
                               firstBtnSymbol: "7",
-                              firstBtnFunction: () {},
+                              firstBtnFunction: () {
+                                _setNum("7");
+                              },
                               secondBtnSymbol: "8",
-                              secondBtnFunction: () {},
+                              secondBtnFunction: () {
+                                _setNum("8");
+                              },
                               thirdBtnSymbol: "9",
-                              thirdBtnFunction: () {},
+                              thirdBtnFunction: () {
+                                _setNum("9");
+                              },
                               fourthBtnSymbol: "+",
-                              fourthBtnFunction: () {},
+                              fourthBtnFunction: () {
+                                _setOperator("+");
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -79,13 +124,21 @@ class _MainUiState extends State<MainUi> {
                           Expanded(
                             child: ButtonRow(
                               firstBtnSymbol: "4",
-                              firstBtnFunction: () {},
+                              firstBtnFunction: () {
+                                _setNum("4");
+                              },
                               secondBtnSymbol: "5",
-                              secondBtnFunction: () {},
+                              secondBtnFunction: () {
+                                _setNum("5");
+                              },
                               thirdBtnSymbol: "6",
-                              thirdBtnFunction: () {},
+                              thirdBtnFunction: () {
+                                _setNum("6");
+                              },
                               fourthBtnSymbol: "–",
-                              fourthBtnFunction: () {},
+                              fourthBtnFunction: () {
+                                _setOperator("–");
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -94,13 +147,21 @@ class _MainUiState extends State<MainUi> {
                           Expanded(
                             child: ButtonRow(
                               firstBtnSymbol: "1",
-                              firstBtnFunction: () {},
+                              firstBtnFunction: () {
+                                _setNum("1");
+                              },
                               secondBtnSymbol: "2",
-                              secondBtnFunction: () {},
+                              secondBtnFunction: () {
+                                _setNum("2");
+                              },
                               thirdBtnSymbol: "3",
-                              thirdBtnFunction: () {},
+                              thirdBtnFunction: () {
+                                _setNum("3");
+                              },
                               fourthBtnSymbol: "×",
-                              fourthBtnFunction: () {},
+                              fourthBtnFunction: () {
+                                _setOperator("×");
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -109,13 +170,21 @@ class _MainUiState extends State<MainUi> {
                           Expanded(
                             child: ButtonRow(
                               firstBtnSymbol: "±",
-                              firstBtnFunction: () {},
+                              firstBtnFunction: () {
+                                _setNum("-");
+                              },
                               secondBtnSymbol: "0",
-                              secondBtnFunction: () {},
+                              secondBtnFunction: () {
+                                _setNum("0");
+                              },
                               thirdBtnSymbol: ".",
-                              thirdBtnFunction: () {},
+                              thirdBtnFunction: () {
+                                _setNum(".");
+                              },
                               fourthBtnSymbol: "÷",
-                              fourthBtnFunction: () {},
+                              fourthBtnFunction: () {
+                                _setOperator("÷");
+                              },
                             ),
                           ),
                         ],
