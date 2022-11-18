@@ -6,6 +6,26 @@ class CalculatorLogic {
   static String _operator = "";
   static String _result = "";
 
+  static void _setNum1(String num) {
+    _num1 = num;
+  }
+
+  static void _setNum2(String num) {
+    _num2 = num;
+  }
+
+  static String _getNum1() {
+    return _num1;
+  }
+
+  static String _getNum2() {
+    return _num2;
+  }
+
+  static String _getOperator() {
+    return _operator;
+  }
+
   static void setNum(String num) {
     if (_operator.isEmpty) {
       if (num == "-") {
@@ -28,14 +48,6 @@ class CalculatorLogic {
         _num2 += num;
       }
     }
-  }
-
-  static double getNum1() {
-    return double.parse(_num1);
-  }
-
-  static double getNum2() {
-    return double.parse(_num2);
   }
 
   static void setOperator(String op) {
@@ -67,24 +79,24 @@ class CalculatorLogic {
   }
 
   static void square() {
-    _result = (double.parse(_num1) * double.parse(_num1)).toString();
-    _num1 = getResult();
+    _result = (double.parse(_getNum1()) * double.parse(_getNum1())).toString();
+    _setNum1(getResult());
   }
 
   static void equalOperator() {
     if (operate()) {
       setOperator("");
-      _num1 = getResult();
-      _num2 = "";
+      _setNum1(getResult());
+      _setNum2("");
     } else {
       _result = "Denominator cannot be zero.";
     }
   }
 
   static void allClear() {
-    _num1 = "";
+    _setNum1("");
     setOperator("");
-    _num2 = "";
+    _setNum2("");
   }
 
   static String getResult() {
@@ -92,6 +104,6 @@ class CalculatorLogic {
   }
 
   static String getString() {
-    return "$_num1 $_operator $_num2";
+    return "${_getNum1()} ${_getOperator()} ${_getNum2()}";
   }
 }
