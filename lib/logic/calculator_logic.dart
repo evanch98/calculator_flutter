@@ -1,3 +1,5 @@
+// TODO: Add comments
+
 class CalculatorLogic {
   static String _num1 = "";
   static String _num2 = "";
@@ -57,7 +59,7 @@ class CalculatorLogic {
         if (num2 == 0) {
           return false;
         } else {
-          _result = (num1 / num2).toString();
+          _result = (num1 / num2).toStringAsFixed(4);
         }
         break;
     }
