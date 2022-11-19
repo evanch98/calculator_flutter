@@ -12,4 +12,4 @@ Although the application is built with Flutter, it is intended mainly for Androi
 - Basic calculator function
 
 ## Images used in this project
-- [Steve Johnson|Pexels](https://www.pexels.com/photo/orange-red-and-green-abstract-painting-1585325/)
+- [Karolina Grabowska|Pexels](https://www.pexels.com/photo/appetizing-fresh-and-sweet-strawberries-on-table-4022090/)
