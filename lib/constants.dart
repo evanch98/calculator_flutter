@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 //TODO: Add comments
 
 const kNetworkImage =
-    "https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&w=600";
+    "https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 
 const kGutterSize = 3.0;
 
@@ -14,7 +14,7 @@ const kScreenTextStyle = TextStyle(
 );
 
 const kButtonTextStyle = TextStyle(
-  color: Colors.white,
+  color: Colors.black54,
   fontWeight: FontWeight.bold,
   fontSize: 30,
 );
