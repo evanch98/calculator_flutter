@@ -1,6 +1,6 @@
 # calculator_flutter
 
-Start date: 4<sup>th</sup> November 2022
+Start date: 4<sup>th</sup> November 2022<br>
 Although the application is built with Flutter, it is intended mainly for Android devices. 
 
 ## Goals
