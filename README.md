@@ -1,7 +1,7 @@
 # calculator_flutter
 
 Start date: 4<sup>th</sup> November 2022<br>
-Although the application is built with Flutter. 
+The application is built with Flutter for android and iOS devices. 
 
 ## Goals
 - To showcase my knowledge of Flutter and Dart.
