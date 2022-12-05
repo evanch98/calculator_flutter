@@ -13,6 +13,7 @@ class CalculatorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: MainUi(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
